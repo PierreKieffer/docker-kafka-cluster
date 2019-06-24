@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+ zookeeper:
+  image: kafka_base
+  command: ./bin/zookeeper-server-start etc/kafka/zookeeper.properties
+  network_mode: host
+  container_name: zookeeper_server
+
+
+ broker1:
+  image: kafka_base
+  command: ./bin/kafka-server-start etc/kafka/server1.properties
+  network_mode: host
+  container_name: broker1
+
+ broker2:
+  image: kafka_base
+  command: ./bin/kafka-server-start etc/kafka/server2.properties
+  network_mode: host
+  container_name: broker2
+
+ broker3:
+  image: kafka_base
+  command: ./bin/kafka-server-start etc/kafka/server3.properties
+  network_mode: host
+  container_name: broker3
+
+
+
